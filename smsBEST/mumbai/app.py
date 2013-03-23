@@ -28,7 +28,7 @@ STYLE = {"start": "", "repeat": "; ", "end": ""}
 
 
 #ChaloBest = arrest.Client("http://chalobest.in/1.0")
-ChaloBest = arrest.Client("http://dev.chalobest.in/1.0")
+ChaloBest = arrest.Client("http://chalobest.in/1.0")
 
 def get_routes_for_matches(stops):
 #    same_stops = []
@@ -105,7 +105,7 @@ class App(AppBase):
                     #       tt=ast.literal_eval(json.dumps(item[0]))
                 for key, value in item[0].items():
                     if key == "route_type_aliases":
-                        if len(value.strip())==0 and len(pattern.strip())==0:                            
+                        if len(value.strip())==0 and len(pattern.strip())==0:
                             detail.append(str(item[0].get("display_name")))
                             detail.append(str(item[0].get("start_stop")))
                             detail.append(str(item[0].get("start_area")))
