@@ -141,13 +141,18 @@ class App(AppBase):
             #if not routes:
              #   msg.respond("Sorry, we found no route marked '%(text)s'.", text=msg.text)
               #  return
-            url = "http://dev.chalobest.in" + str(detail[6])
+            url = "http://chalobest.in" + str(detail[6])
             distance = str(detail[7])+" kms"
             if str(detail[5]).strip() is not None:
                 headway = "Freq: " + str(detail[5]) + " mins"
             else:
                 headway = "No bus now."
-            response = "%s: %s (%s) to %s (%s). %s. %s %s" % (str(detail[0]), str(detail[1]), str(detail[2]), str(detail[3]), str(detail[4]),str(headway), str(url), str(distance))
+            if str(detail[0]).find('Ltd') is not None:
+               str1 = str(detail[0])
+               str2 = str1.replace(' ','')
+               str3 = str2.replace('Ltd','L')
+
+            response = "%s: %s (%s) to %s (%s). %s. %s %s" % (str3, str(detail[1]), str(detail[2]), str(detail[3]), str(detail[4]),str(headway), str(url), str(distance))
 
         elif msg.text.find(" to ") != -1:
 
