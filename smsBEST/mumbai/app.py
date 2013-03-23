@@ -141,7 +141,7 @@ class App(AppBase):
             #if not routes:
              #   msg.respond("Sorry, we found no route marked '%(text)s'.", text=msg.text)
               #  return
-            url = "http://dev.chalobest.in" + str(detail[6])
+            url = "http://chalobest.in" + str(detail[6])
             distance = str(detail[7])+" kms"
             if str(detail[5]).strip() is not None:
                 headway = "Freq: " + str(detail[5]) + " mins"
